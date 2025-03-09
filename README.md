@@ -13,6 +13,24 @@ Monitoring aggregated measures like A&E attendances and emergency admissions is 
 
 Although this data is crucial, the manual process of retrieving, processing, and analysing this data can be time-consuming and prone to errors.
 
+The objective of this project is to design and implement an automated data pipeline that retrieves open-source data on A&E attendances and emergency admissions from the NHS Digital website. The pipeline will ensure that the data is collected, processed, and stored efficiently, enabling timely and accurate analysis.
+
+To achieve this, the following steps will be taken:
+1. Create GCP Bucket and BQ Dataset: Utilize Terraform to create a Google Cloud Platform (GCP) bucket and a BigQuery (BQ) dataset for storing the project data. This will provide a scalable and secure environment for data storage and management.  
+2. Set Up Kestra Workflow: Implement a Kestra workflow to automate the process of moving NHS A&E CSV files from the web to the GCP bucket. The workflow will include steps for renaming the files appropriately before storage to maintain a consistent and organized structure.  
+3. Data Processing with dbt/BQ Dataform: Use dbt or BQ Dataform to process the data. This will involve removing the "Total" row from the latest extract, extracting the month and year, and appending the newest data extract to the existing dataset. These transformations will ensure the data is clean and ready for analysis.  
+4. Data Visualization with Looker Studio: Visualize the processed data using Looker Studio. This will enable stakeholders to generate reports and visualizations, providing valuable insights into trends and patterns in emergency services usage.  
+
+Expected Outcomes:
+- A fully automated data pipeline that retrieves, processes, and stores A&E attendances and emergency admissions data from NHS Digital.
+- Improved efficiency and accuracy in data retrieval and analysis.
+- Enhanced ability for healthcare providers and researchers to monitor and respond to trends in emergency services.
+
+Challenges:
+- Ensuring data quality and consistency during the retrieval and processing stages.
+- Handling changes in data formats or structures on the NHS Digital website.
+- Implementing robust error handling and recovery mechanisms.
+
 ## Evaluation Criteria
 
 * Problem description

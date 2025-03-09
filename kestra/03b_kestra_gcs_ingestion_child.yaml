@@ -1,47 +1,30 @@
-id: kestra_gcs_ingestion_child
+id: 02_gcp_kestra_ingestion
 namespace: tutorial
 description: |
-  Yellow Taxi Trip Records for January 2024 - June 2024 NOT the entire year of data Parquet Files: 
-    https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+  "Ingest NHS England A&E Attendances and Emergency Admissions
+  https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/""
 
-inputs:
-  - id: month
-    type: STRING
-    description: This is the month of the yellow taxi 2024 parquet file
+# https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2025/02/Monthly-AE-January-2025.csv
 
 variables:
-  id: "yellow_tripdata_2024-{{inputs.month}}.parquet"
-  gcs_file: "gs://{{kv('GCP_BUCKET_NAME')}}/{{vars.id}}"
-  data: "{{outputs.extract.outputFiles['yellow_tripdata_2024-' ~ inputs.month ~ '.parquet']}}"
-
+  id: "Monthly-AE-January-2025.csv"
+  gcs_file: "gs://{{kv('GCP_BUCKET_NAME')}}/Monthly-AE-January-2025.csv"
+  data: "{{outputs.extract_monthly_csv.outputFiles['Monthly-AE-January-2025.csv']}}"
 
 tasks:
-  - id: extract
+  - id: extract_monthly_csv
     type: io.kestra.plugin.scripts.shell.Commands
     outputFiles:
-      - "*.parquet"
-    taskRunner:
+      - "*.csv"
+    taskRunner: 
       type: io.kestra.plugin.core.runner.Process
     commands:
-      - wget -qO- https://d37ci6vzurychx.cloudfront.net/trip-data/{{render(vars.id)}} -O {{ render(vars.id) }}
-  
-
+      - wget -qO- https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2025/02/Monthly-AE-January-2025.csv -O {{ render(vars.id) }}
   
   - id: upload_to_gcs
     type: io.kestra.plugin.gcp.gcs.Upload
     from: "{{render(vars.data)}}"
     to: "{{render(vars.gcs_file)}}"
-
-  - id: hello
-    type: io.kestra.plugin.core.log.Log
-    description: this is a *task* documentation
-    message: |
-      The fetched file is {{render(vars.id)}} and output data is {{render(vars.data)}}, uploaded in bucket {{render(vars.gcs_file)}}
-
-  - id: purge_files
-    type: io.kestra.plugin.core.storage.PurgeCurrentExecutionFiles
-    description: If you'd like to explore Kestra outputs, disable it.
-    #disabled: false
 
 
 pluginDefaults:

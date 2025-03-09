@@ -1,0 +1,75 @@
+id: 02_gcp_kestra_ingestion
+namespace: tutorial
+description: |
+  "Ingest NHS England A&E Attendances and Emergency Admissions
+  https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/""
+
+# https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2025/02/Monthly-AE-January-2025.csv
+
+variables:
+  id: "Monthly-AE-January-2025.csv"
+  gcs_file: "gs://{{kv('GCP_BUCKET_NAME')}}/Monthly-AE-January-2025.csv"
+  filtered_data: "{{outputs.extract_and_filter_csv.outputFiles['filtered_Monthly-AE-2025-January.csv']}}"
+  financial_year: "'2024-25'"
+  month: "'December'"
+
+tasks:  
+  - id: extract_and_filter_csv
+    type: io.kestra.plugin.scripts.python.Script
+    outputFiles:
+      - "*.csv"
+    beforeCommands:
+      - pip install pandas
+      - pip install bs4
+    script: |
+        import pandas as pd
+        import requests
+        from bs4 import BeautifulSoup
+        import re
+        # Set dates variables
+        #FinancialYear = '2024-25'
+        FinancialYear = str({{render(vars.financial_year)}})
+        Year = int(FinancialYear[0:4])+1 
+        Month = {{render(vars.month)}}
+        print(Month)
+        url = f"https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/ae-attendances-and-emergency-admissions-{FinancialYear}/"
+        response = requests.get(url)
+        soup = BeautifulSoup(response.content, "html.parser")
+        # Find all h3 tags, which contain the month and year
+        h3_tags = soup.find_all("h3")
+        pattern = fr"{Month}" + r"\s+\d{4}"
+        for h3_tag in h3_tags:
+          header_text = h3_tag.text.strip() 
+          if re.match(pattern, header_text):
+            # Find the corresponding CSV link
+            csv_link = h3_tag.find_next_sibling("p").find("a", href=lambda href: href and href.endswith(".csv"))
+            csv_url = csv_link["href"]
+
+        print(f"the csv url is: {csv_url}")
+        df = pd.read_csv(csv_url)
+
+        # Filter out rows where 'Period' column contains the word 'Total'
+        df_filtered = df[~df['Period'].str.contains('Total', case=False, na=False)]
+
+        # Save the filtered CSV
+        YearMonth = str(Year)+"-"+Month
+        # print(YearMonth)
+        csv_name = f"filtered_Monthly-AE-{YearMonth}.csv"
+        print(csv_name)
+        df_filtered.to_csv(csv_name, index=False)
+        
+
+  
+  - id: upload_to_gcs
+    type: io.kestra.plugin.gcp.gcs.Upload
+    from: "{{render(vars.filtered_data)}}"
+    to: "{{render(vars.gcs_file)}}"
+
+
+pluginDefaults:
+  - type: io.kestra.plugin.gcp
+    values:
+      serviceAccount: "{{kv('GCP_CREDS')}}"
+      projectId: "{{kv('GCP_PROJECT_ID')}}"
+      location: "{{kv('GCP_LOCATION')}}"
+      bucket: "{{kv('GCP_BUCKET_NAME')}}"

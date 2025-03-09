@@ -1,5 +1,8 @@
 id: 01_gcp_kv
 namespace: tutorial
+description: |
+  "setup GCP key-value pairs for credentials, project id, location, bucket name, and dataset name"
+
 
 tasks:
   - id: gcp_creds
@@ -9,7 +12,7 @@ tasks:
     value: |
       {
         "type": "service_account",
-        "project_id": "...",
+        "project_id": "...", 
       }
 
   - id: gcp_project_id

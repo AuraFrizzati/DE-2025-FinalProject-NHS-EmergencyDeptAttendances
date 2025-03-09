@@ -1,10 +1,8 @@
 id: 02_gcp_kestra_ingestion_scheduled
 namespace: tutorial
 description: |
-  "Ingest NHS England A&E Attendances and Emergency Admissions
-  https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/""
-
-# https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2025/02/Monthly-AE-January-2025.csv
+  "Ingest NHS England A&E Attendances and Emergency Admissions using monthly schedule (run on the 15th of each month)
+  https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/"
 
 triggers:
   - id: monthly

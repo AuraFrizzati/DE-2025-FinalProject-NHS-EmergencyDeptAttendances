@@ -2,7 +2,7 @@
 
 
 ## The Problem
-Each month, NHS Digital publishes aggregated data on Accident & Emergnecy (A&E) attendances and emergency admissions. This data is crucial for healthcare providers, policymakers, and researchers to monitor and analyse the performance and capacity of emergency services across the UK. However, the manual process of retrieving, processing, and analyzing this data can be time-consuming and prone to errors.
+Each month, NHS Digital publishes aggregated data on Accident & Emergnecy (A&E) attendances and emergency admissions:  https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/
 
 Monitoring aggregated measures like A&E attendances and emergency admissions is crucial for several reasons:
 - **Resource Allocation**: By tracking these metrics, healthcare providers can better allocate resources, such as staff and equipment, to areas experiencing high demand.
@@ -10,6 +10,8 @@ Monitoring aggregated measures like A&E attendances and emergency admissions is 
 - **Policy Making**: Aggregated data informs policymakers about the current state of healthcare services, enabling them to make evidence-based decisions.
 - **Public Health**: Monitoring these metrics helps in identifying trends and patterns in public health, such as outbreaks or seasonal variations in healthcare demand.
 - **Quality of Care**: Ensuring that patients receive timely and appropriate care is essential for maintaining high standards of healthcare.
+
+Although this data is crucial, the manual process of retrieving, processing, and analysing this data can be time-consuming and prone to errors.
 
 ## Evaluation Criteria
 

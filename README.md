@@ -15,7 +15,14 @@ One obstacle to achieve this monitoring is that the manual process of retrieving
 
 The objective of this project is to design and implement an automated data pipeline that retrieves the open-source data on A&E attendances and emergency admissions from the NHS Digital website. The pipeline will ensure that the data is collected, processed, and stored efficiently, enabling timely and accurate analysis.
 
-To achieve this, the following steps will be taken:
+## High Level Project Specs
+
+To create a DE pipeline, the following steps will be taken:
+1. Cloud setup: a project space was setup on Google Cloud Platform using Terraform Infrastructure as Code (IaC)
+    - see code here
+    - A Google Storage Bucket and a Google Bigquery Dataset were created to host the data lake and the data warehouse for the project, respectively
+
+
 1. Create GCP Bucket and BQ Dataset: Utilize Terraform to create a Google Cloud Platform (GCP) bucket and a BigQuery (BQ) dataset for storing the project data. This will provide a scalable and secure environment for data storage and management.  
 2. Set Up Kestra Workflow: Implement a Kestra workflow to automate the process of moving NHS A&E CSV files from the web to the GCP bucket. The workflow will include steps for renaming the files appropriately before storage to maintain a consistent and organized structure.  
 3. Data Transformation using **BQ Dataform**: Dataform is a tool similar to dbt available on BQ/GCP that can be used to develop and operationalise scalable data transformations pipelines. These transformations will ensure the data is clean and ready for analysis.  
@@ -26,6 +33,7 @@ To achieve this, the following steps will be taken:
     - Aggregate some key columns we want to visualise in the dashboard
 
 4. Data Visualization with Looker Studio: Visualize the processed data using Looker Studio. This will enable stakeholders to generate reports and visualizations, providing valuable insights into trends and patterns in emergency services usage.  
+
 
 Expected Outcomes:
 - A fully automated data pipeline that retrieves, processes, and stores A&E attendances and emergency admissions data from NHS Digital.

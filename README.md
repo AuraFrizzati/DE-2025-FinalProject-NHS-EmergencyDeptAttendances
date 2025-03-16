@@ -21,12 +21,10 @@ To create a DE pipeline, the following steps will be taken:
 1. **Cloud setup**: a project space was setup on **Google Cloud Platform** (**GCP**) using **Terraform Infrastructure as Code** (**IaC**) to ensure scalability, reproducibility, and efficient resource management.
     - see code here
     - A **Google Storage Bucket** and a **Google Bigquery Dataset** were created to host the data lake and the data warehouse for the project, respectively
-2. **Data Ingestion**: **batch** monthly NHS A&E open data is retrieved from this [website](https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/). Kestra was selected as orchestrator and run on a local machine (MacOS) via Docker to create a connection with GCP and pull out data using a scheduled strategy (triggered on the 15th day of each month)
-    - For details on the kestra flow scripts see here:
-    - The main `02_gcp_kestra_ingestion_scheduled.yaml` file runs monthly a webscraper (written in python) to automatically extract the correct URL to retrieve and upload to the GCP bucket the latest CSV file available on the NHS website 
-
-1. Create GCP Bucket and BQ Dataset: Utilize Terraform to create a Google Cloud Platform (GCP) bucket and a BigQuery (BQ) dataset for storing the project data. This will provide a scalable and secure environment for data storage and management.  
-2. Set Up Kestra Workflow: Implement a Kestra workflow to automate the process of moving NHS A&E CSV files from the web to the GCP bucket. The workflow will include steps for renaming the files appropriately before storage to maintain a consistent and organized structure.  
+2. **Data Ingestion**: **batch** monthly NHS A&E open data is retrieved from this [website](https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/). **Kestra** was selected as **orchestrator** and run on a local machine (MacOS) via **Docker** to create a connection with GCP and pull out data using a scheduled strategy (triggered on the 15th day of each month)
+    - For details on the kestra flow scripts see here: ...add...
+    - The main `02_gcp_kestra_ingestion_scheduled.yaml` file runs monthly a **webscraper** (written in python) to automatically extract the correct URL to retrieve and upload to the GCP bucket the latest CSV file available on the NHS website 
+ 
 3. Data Transformation using **BQ Dataform**: Dataform is a tool similar to dbt available on BQ/GCP that can be used to develop and operationalise scalable data transformations pipelines. These transformations will ensure the data is clean and ready for analysis.  
     - Remove the "Total" row from each extract
     - Add missing columns from earliest extract (before August 2020)

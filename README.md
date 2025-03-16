@@ -15,13 +15,13 @@ One obstacle to achieve this monitoring is that the manual process of retrieving
 
 The objective of this project is to design and implement an automated data pipeline that retrieves the open-source data on A&E attendances and emergency admissions from the NHS Digital website. The pipeline will ensure that the data is collected, processed, and stored efficiently, enabling timely and accurate analysis.
 
-## High Level Project Specs
+## High Level Project Specifications
 
 To create a DE pipeline, the following steps will be taken:
-1. Cloud setup: a project space was setup on Google Cloud Platform using Terraform Infrastructure as Code (IaC)
+1. **Cloud setup**: a project space was setup on **Google Cloud Platform** (**GCP**) using **Terraform Infrastructure as Code** (**IaC**) to ensure scalability, reproducibility, and efficient resource management.
     - see code here
-    - A Google Storage Bucket and a Google Bigquery Dataset were created to host the data lake and the data warehouse for the project, respectively
-
+    - A **Google Storage Bucket** and a **Google Bigquery Dataset** were created to host the data lake and the data warehouse for the project, respectively
+2. Data Ingestion: monthly NHS A&E open data is retrieved from this (website)[https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/]
 
 1. Create GCP Bucket and BQ Dataset: Utilize Terraform to create a Google Cloud Platform (GCP) bucket and a BigQuery (BQ) dataset for storing the project data. This will provide a scalable and secure environment for data storage and management.  
 2. Set Up Kestra Workflow: Implement a Kestra workflow to automate the process of moving NHS A&E CSV files from the web to the GCP bucket. The workflow will include steps for renaming the files appropriately before storage to maintain a consistent and organized structure.  

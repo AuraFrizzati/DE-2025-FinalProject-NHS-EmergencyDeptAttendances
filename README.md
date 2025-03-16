@@ -25,7 +25,7 @@ To create a DE pipeline, the following steps were taken:
     - A **Google Storage Bucket** and a **Google Bigquery Dataset** were created to host the data lake and the data warehouse for the project, respectively
 
 2. **Data Ingestion**: The pipeline ingests batch NHS A&E open data, which is published monthly on the official  [NHS England website](https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/). 
-    - **Orchestration with Kestra**: Kestra was chosen as the orchestrator, running on a local MacOS machine via **Docker**. A **scheduled trigger** (15th of each month) ensures automatic execution. See Kestra scripts here: ...add code...
+    - **Orchestration with Kestra**: Kestra was chosen as the orchestrator, running on a local MacOS machine via **Docker**. A **scheduled trigger** (15th of each month) ensures automatic execution. See Kestra scripts here: [Kestra Documentation](kestra/README.md)
     - The main ingestion script (`02_gcp_kestra_ingestion_scheduled.yaml`) executes a **Python web scraper** that:
         - Extracts the correct URL from the NHS website.
         - Downloads the latest CSV file.

@@ -45,6 +45,8 @@ To create a DE pipeline, the following steps were taken:
     - Appending new data: Integrating fresh extracts into the dataset.
     - Creating aggregated metrics for visualization in dashboards.
 
+Here is the link to the Github repository created in Dataform for this project: https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project
+
 
 4. **Data Visualization**: The processed data is visualised in **Looker Studio**, providing high-level insights into A&E attendance and hospital emergency admissions.
     - The **dashboard** is available at this link: https://lookerstudio.google.com/s/oGRrPtX-9xY

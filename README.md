@@ -1,8 +1,8 @@
-# Automated Data Pipeline for NHS Digital A&E Attendances and Emergency Admissions
+# Automated Data Pipeline for data retrieval and visualisation of NHS Digital A&E Attendances and Emergency Admissions
 
-## The Problem
+## The Problem :hospital:
 
-Each month, NHS Digital publishes aggregated data on Accident & Emergency (A&E) attendances and emergency hospital admissions:  https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/
+Each month, **NHS Digital** publishes aggregated data on **Accident & Emergency (A&E) attendances** and **emergency hospital admissions**:  https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/
 
 Monitoring A&E attendances and emergency admissions is crucial for several reasons:
 
@@ -18,7 +18,7 @@ The objective of this project is to design and implement an automated data pipel
 
 ## High Level Project Specifications
 
-To create a DE pipeline, the following steps will be taken:
+To create a DE pipeline, the following steps were taken:
 
 1. **Cloud setup**: a project space was setup on **Google Cloud Platform** (**GCP**) using **Terraform Infrastructure as Code** (**IaC**) to ensure scalability, reproducibility, and efficient resource management.
     - see code here ..add..

@@ -21,7 +21,7 @@ The objective of this project is to design and implement an automated data pipel
 To create a DE pipeline, the following steps were taken:
 
 1. **Cloud setup**: a project space was setup on **Google Cloud Platform** (**GCP**) using **Terraform Infrastructure as Code** (**IaC**) to ensure scalability, reproducibility, and efficient resource management.
-    - The code used is available here: https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances/tree/main/terraform
+    - The code used is available here: [Terraform documentation](https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances/tree/main/terraform)
     - `main.tf`: terraform script to specify **Google** as **infrastructure provider** and the **resources** to create (`google_storage_bucket` and `google_bigquery_dataset`)
     - A **Google Storage Bucket** and a **Google Bigquery Dataset** were created to host the data lake and the data warehouse for the project, respectively
     - Access to Google Cloud was granted to Terraform by setting in the terminal a **GOOGLE_APPLICATION_CREDENTIALS** environment variable pointing to the path where the **service-account-key-file.json** was stored on the local machine:

@@ -15,3 +15,7 @@ curl -X POST http://localhost:8080/api/v1/flows/import -F fileUpload=@02_gcp_kes
 
 - `01_gcp_kv.yaml`: configures the **essential parameters** for interacting with **GCP**, including authentication credentials, project ID, location, storage bucket name, and BigQuery dataset name.
 - `02_gcp_kestra_ingestion_scheduled.yaml`: The primary orchestration file responsible for **automating** the **monthly retrieval of NHS CSV files**. It runs a **Python** script within the same Docker container as Kestra, which **web scrapes** (`beautifulsoup`) the NHS website to locate the latest CSV file, downloads it, and uploads it to the GCS bucket.
+
+This is the **Topology** of the **main data ingestion file** (`02_gcp_kestra_ingestion_scheduled.yaml`):
+
+![alt text](image.png)

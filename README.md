@@ -48,7 +48,12 @@ To create a DE pipeline, the following steps were taken:
     - Appending new data: Integrating fresh extracts into the dataset.
     - Creating aggregated metrics for visualization in dashboards.
 
+    ![alt text](image-1.png)
+
 4. **Data Visualization**: The processed data is visualised in **Looker Studio**, providing high-level insights into A&E attendance and hospital emergency admissions.
     - The **dashboard** is available at this link: https://lookerstudio.google.com/s/oGRrPtX-9xY
-    - **Top tile**: "Patients volumes for A&E Attendances and Emergency Admissions in NHS England". It displays monthly trends for: Total A&E Attendances, A&E Attendances over 4 hours and Emergency Hospital Admissions via A&E
-    - **Bottom tile**: "% of A&E Attendances over 4 Hours and % Emergency Hospital Admissions via A&E (last month)". It shows the latest monthly performance for NHS England Areas.
+    - **Top tile**: "Patients volumes for A&E Attendances and Emergency Admissions in NHS England". It displays monthly trends for: Total A&E Attendances, A&E Attendances over 4 hours and Emergency Hospital Admissions via A&E:
+    ![alt text](image-2.png)
+
+    - **Bottom tile**: "% of A&E Attendances over 4 Hours and % Emergency Hospital Admissions via A&E (last month)". It shows the latest monthly performance for NHS England Areas:
+    ![alt text](image-3.png)

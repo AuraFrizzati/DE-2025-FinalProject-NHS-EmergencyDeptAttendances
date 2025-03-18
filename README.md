@@ -33,20 +33,20 @@ To create a DE pipeline, the following steps were taken:
 
  
 3. **Data Warehouse**: **Google BigQuery** was used as data warehouse. Monthly extracts from the NHS website were imported from GCS bucket and appended as a **master table**. Query performance from the master table was optimized using:
-    - **Partitioning**: By the `year_month` date column.
-    - **Clustering**: By key categorical columns used in aggregations (["`Parent_Org_cln`", "`Org_name`"]).
+    - **Partitioning**: By the `year_month` date column
+    - **Clustering**: By key categorical columns used in aggregations (["`Parent_Org_cln`", "`Org_name`"])
+    - Partitioning and clustering are specified in the dataform sqlx code used to create the master table:
+
+    ![alt text](image.png)
 
 
-4. **Data Transformation**: BigQuery **[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the GCP-native alternative to dbt), ensuring data is clean, structured, and analysis-ready. The key transformation steps include:
+4. **Data Transformation**: BigQuery **[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the GCP-native alternative to dbt), ensuring data is clean, structured, and analysis-ready. This is the link to the Github repository created in Dataform for this project: https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project. The key transformation steps include:
     - Removing the "Total" row from each extract.
     - Standardizing schema: Adding missing columns to align older extracts (pre-August 2020) with newer ones.
     - Consolidating data: Merging all extracts into a single "master" table.
     - Deriving date fields: Extracting Month-Year from the "Period" string column.
     - Appending new data: Integrating fresh extracts into the dataset.
     - Creating aggregated metrics for visualization in dashboards.
-
-Here is the link to the Github repository created in Dataform for this project: https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project
-
 
 4. **Data Visualization**: The processed data is visualised in **Looker Studio**, providing high-level insights into A&E attendance and hospital emergency admissions.
     - The **dashboard** is available at this link: https://lookerstudio.google.com/s/oGRrPtX-9xY

@@ -59,7 +59,7 @@ To create a Dataform repository to connect to BigQuery:
 
 - Setup a Dataform **Development Workspace** (this is similar to a "**branch**" in Github):
 
-    <img src="image-7.png" alt="alt text" width="300" height="100">
+    <img src="image-7.png" alt="alt text" width="200" height="100">
 
 
 

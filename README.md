@@ -21,8 +21,11 @@ The objective of this project is to design and implement an automated data pipel
 To create a DE pipeline, the following steps were taken:
 
 1. **Cloud setup**: a project space was setup on **Google Cloud Platform** (**GCP**) using **Terraform Infrastructure as Code** (**IaC**) to ensure scalability, reproducibility, and efficient resource management.
+    - The first step is to **create a new Project on GCP** by selecting **Create Project** from the console:
+    ![alt text](image-4.png)
+    
     - The code used is available here: [Terraform documentation](https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances/blob/main/terraform/README.md)
-    - A **Google Storage Bucket** and a **Google Bigquery Dataset** were created to host the data lake and the data warehouse for the project, respectively
+    - A **Google Storage Bucket (GCS)** and a **Google Bigquery Dataset** were created to host the data lake and the data warehouse for the project, respectively
 
 
 2. **Data Ingestion**: The pipeline ingests batch NHS A&E open data, which is published monthly on the official  [NHS England website](https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/). 
@@ -30,7 +33,7 @@ To create a DE pipeline, the following steps were taken:
     - The main ingestion script (`02_gcp_kestra_ingestion_scheduled.yaml`) executes a **Python web scraper** that:
         - Extracts the correct URL from the NHS website.
         - Downloads the latest CSV file.
-        - Uploads the file to the **Google Cloud Storage (GCS) bucket**.
+        - Uploads the file to the **GCS bucket**.
 
  
 3. **Data Warehouse**: **Google BigQuery** was used as data warehouse. Monthly extracts from the NHS website were imported from GCS bucket and appended as a **master table**. Query performance from the master table was optimized using:

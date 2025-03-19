@@ -46,7 +46,19 @@ To create a DE pipeline, the following steps were taken:
     ![alt text](image.png)
 
 
-4. **Data Transformation**: BigQuery **[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the GCP-native alternative to dbt), ensuring data is clean, structured, and analysis-ready. This is the link to the Github repository created in Dataform for this project: https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project. The key transformation steps include:
+4. **Data Transformation**: BigQuery **[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the GCP-native alternative to dbt), ensuring data is clean, structured, and analysis-ready. This is the link to the Github repository created in Dataform for this project: https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project. 
+
+To create a Dataform repository to connect to BigQuery:
+- select **Pipelines(Dataform)** from the GCP menu:
+
+![alt text](image-5.png)
+
+- Click on **Create repository**
+
+![alt text](image-6.png)
+
+
+The key transformation steps include:
     - Removing the "Total" row from each extract.
     - Standardizing schema: Adding missing columns to align older extracts (pre-August 2020) with newer ones.
     - Consolidating data: Merging all extracts into a single "master" table.

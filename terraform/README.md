@@ -24,3 +24,15 @@ These are the terraform scripts used in this project:
 
 - [`variables.tf`](https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances/blob/main/terraform/variables.tf): **Terraform variables** specified in `main.tf`
 
+These commands were then run from the terraform folder that contains the terraform scripts to create the infrastructure:
+
+```terraform
+# initialise Terraform State file (.tfstate):
+terraform init
+
+# Check changes to the infrastructure plan:
+terraform plan 
+
+# Apply the Terraform infrastructure plan (create bucket and BQ dataset):
+terraform apply 
+```

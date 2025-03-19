@@ -3,11 +3,12 @@
 - A **Service Account** was created on Google Cloud Platform to enable Terraform to create a google Cloud Storage (GCS) Bucket and a BigQuery Dataset:
     - Select **IAM & Admin** --> **Service Accounts**:
     ![alt text](image.png)
+
     - Select **Create Service Account**
     ![alt text](image-1.png)
 
+    - The Service account requires these roles: `Bigquery Admin` (to create a BigQuery dataset), `Storage Admin` (to create a GCS bucket)
 
-    The Service account requires
 - Access to Google Cloud was granted to Terraform by setting in the terminal a **GOOGLE_APPLICATION_CREDENTIALS** environment variable pointing to the path where the **service-account-key-file.json** was stored on the local machine:
 
 ```

@@ -24,6 +24,13 @@ This is the **Topology** of the **main data ingestion file** (`02_gcp_kestra_ing
     ![alt text](image-1.png)
 
 2. The task `extract_and_filter_csv` is then executed and runs a python script in the same Docker container where Kestra is running. The python script contains a webscraper (using the library `beautifulsoup`) to extract the url for the NHS A&E csv for the current month and year. The csv is then retrieved and imported as a `pandas` dataframe.
+    ![alt text](image-5.png)
+
 3. The task `upload_to_gcs` is then run and uploads the data to the GCS  bucket
+    ![alt text](image-2.png)
+
 4. The task `set_label` is carried out to assign the **month** and **year** of the retrieved csv file to the Kestra execution (this allows to monitor the pipeline for different executions and it is especially useful to check that the backfill executions have all been carried out)
+    ![alt text](image-3.png)
+
 5. The final task is `purge_files`, which automatically removes the CSVs retrieved by the orchestrator from the local machine where it is running
+    ![alt text](image-4.png)

@@ -7,7 +7,10 @@
     - Select **Create Service Account**
     ![alt text](image-1.png)
 
-    - The Service account requires these roles: `Bigquery Admin` (to create a BigQuery dataset), `Storage Admin` (to create a GCS bucket)
+    - The Service account requires these **roles enabled**: `Bigquery Admin` (to create a BigQuery dataset), `Storage Admin` (to create a GCS bucket)
+
+    - Create a new key as json file to connect to the Service Account for Terraform created above:
+    ![alt text](image-2.png)
 
 - Access to Google Cloud was granted to Terraform by setting in the terminal a **GOOGLE_APPLICATION_CREDENTIALS** environment variable pointing to the path where the **service-account-key-file.json** was stored on the local machine:
 

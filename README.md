@@ -51,7 +51,7 @@ To create a DE pipeline, the following steps were taken:
 To create a Dataform repository to connect to BigQuery:
 - select **Pipelines(Dataform)** from the GCP menu:
 
-<img src="image-5.png" alt="alt text" width="300" height="400">
+    <img src="image-5.png" alt="alt text" width="300" height="400">
 
 - Click on **Create repository**
 

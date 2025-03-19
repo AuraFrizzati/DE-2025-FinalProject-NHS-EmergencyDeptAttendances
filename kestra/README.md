@@ -20,7 +20,10 @@ This is the **Topology** of the **main data ingestion file** (`02_gcp_kestra_ing
 
 ![alt text](image.png)
 
-1. The orchestrator pipeline is run automatically on a **monthly schedule** via a **scheduler** triggerred on the 15th of each month. Previous months are downloaded using the **Backfill executions** feature of **Kestra Triggers**:
+1. The orchestrator pipeline is run automatically on a **monthly schedule** via a **scheduler** triggerred on the 15th of each month. The scheduler/trigger retrieves the current month and year to retrieve the relevant file on the NHS website.
+    ![alt text](image-6.png)
+    
+    Previous months are downloaded using the **Backfill executions** feature of **Kestra Triggers**:
     ![alt text](image-1.png)
 
 2. The task `extract_and_filter_csv` is then executed and runs a python script in the same Docker container where Kestra is running. The python script contains a webscraper (using the library `beautifulsoup`) to extract the url for the NHS A&E csv for the current month and year. The csv is then retrieved and imported as a `pandas` dataframe.

@@ -16,6 +16,8 @@ One obstacle to achieve this monitoring is that the manual process of retrieving
 
 The objective of this project is to design and implement an automated data pipeline that retrieves the open-source data on A&E attendances and emergency admissions from the NHS Digital website. The pipeline will ensure that the data is collected, processed, and stored efficiently, enabling timely and accurate analysis.
 
+We will create a pipeline and **retrieve monthly data from January 2020 to February 2025**.
+
 ## High Level Project Specifications
 
 To create a DE pipeline, the following steps were taken:
@@ -28,6 +30,7 @@ To create a DE pipeline, the following steps were taken:
     - The **Terraform code** used is available here: [Terraform documentation](https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances/blob/main/terraform/README.md)
 
 2. **Data Ingestion**: The pipeline ingests batch NHS A&E open data, which is published monthly on the official  [NHS England website](https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/). 
+    - The data was retrieved **from January 2020 to February 2025**.
     - **Orchestration with Kestra**: Kestra was chosen as the orchestrator, running on a local MacOS machine via **Docker**. A **scheduled trigger** (15th of each month) ensures automatic execution. See Kestra scripts here: [Kestra Documentation](kestra/README.md)
     - The main ingestion script (`02_gcp_kestra_ingestion_scheduled.yaml`) executes a **Python web scraper** that:
         - Extracts the correct URL from the NHS website.

@@ -55,7 +55,7 @@ To create a Dataform repository to connect to BigQuery:
 
 - Click on **Create repository**
 
-    <img src="image-6.png" alt="alt text" width="100" height="50">
+    <img src="image-6.png" alt="alt text" width="200" height="100">
 
 
 The key transformation steps include:

@@ -25,6 +25,8 @@ To create a DE pipeline, the following steps were taken:
 1. **Cloud setup**: a project space was setup on **Google Cloud Platform** (**GCP**) using **Terraform Infrastructure as Code** (**IaC**) to ensure scalability, reproducibility, and efficient resource management.
     - The first step is to **create a new Project on GCP** by selecting **Create Project** from the console:
     ![alt text](image-4.png)
+    
+    <img src="image-4.png" alt="alt text" width="800" height="100">
 
     - Terraform was then used to create a **Google Storage Bucket (GCS)** and a **Google Bigquery Dataset**, to host the data lake and the data warehouse for the project, respectively
     - The **Terraform code** used is available here: [Terraform documentation](https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances/blob/main/terraform/README.md)
@@ -57,7 +59,7 @@ To create a Dataform repository to connect to BigQuery:
 
     <img src="image-6.png" alt="alt text" width="400" height="100">
 
-- Setup a Dataform **Development Workspace** (this is similar to a "**branch**" in Github):
+- Click on **Create a Development Workspace** to setup a Dataform Workspace (this is similar to a "**branch**" in Github):
 
     <img src="image-7.png" alt="alt text" width="200" height="100">
 

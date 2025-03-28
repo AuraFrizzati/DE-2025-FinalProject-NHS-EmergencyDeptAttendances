@@ -2,7 +2,7 @@
 
 This project was created a submission to the online free course **[Data Engineering Zoomcamp 2025](https://github.com/DataTalksClub/data-engineering-zoomcamp/)** run by **DataTalks Club**.
 
-## The Problem :hospital:
+## :hospital: The Problem
 
 Each month, **NHS Digital** publishes aggregated data on **Accident & Emergency (A&E) attendances** and **emergency hospital admissions**:  https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/
 
@@ -16,11 +16,11 @@ Monitoring A&E attendances and emergency admissions is crucial for several reaso
 
 One obstacle to achieve this monitoring is that the manual process of retrieving, processing, and analysing the data can be time-consuming and prone to errors.
 
-## Objective :dart:
+##  :dart: Main Objective
 
 The objective of this project is to design and **implement an automated data pipeline that retrieves the open-source data on A&E attendances and emergency admissions from the NHS Digital website** (from January 2020 onwards). The pipeline will ensure that the data is collected, processed, and stored efficiently, enabling timely and accurate analysis.
 
-## High-level Project Specifications :pushpin:
+## :pushpin: High-Level Project Specifications
 
 1. **Cloud setup**: a project space was setup on **Google Cloud Platform** (**GCP**) using **Terraform Infrastructure as Code** (**IaC**) to ensure scalability, reproducibility, and efficient resource management.
 
@@ -33,7 +33,7 @@ The objective of this project is to design and **implement an automated data pip
 5. **Data Visualization**: The processed data was visualised in **Looker Studio**, providing high-level insights into A&E attendance and hospital emergency admissions (see dashboard at this link: https://lookerstudio.google.com/s/oGRrPtX-9xY)
 
 
-## Repository Structure :deciduous_tree:
+## :deciduous_tree: Repository Structure
 
 The main instructions to run this project are contained in this readme file. I am also sharing the code I used to setup Terraform (inside `terraform/`) and Kestra (inside `kestra/`). The scripts I developed for data trasformation in BQ usinf Dataform are avaiable in a separate Github repository (https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project, commit id for submission: `226eb7b`).
 
@@ -53,7 +53,7 @@ The main instructions to run this project are contained in this readme file. I a
 └── README.md
 ```
 
-## Software/Platforms used :computer:
+## :computer: Software/Platforms used
 
 - **Google Cloud Platform** (**GCP**): 
     - **Get started** with GCP: https://www.youtube.com/watch?v=GKEk1FzAN1A
@@ -69,7 +69,7 @@ The main instructions to run this project are contained in this readme file. I a
     - Install **Docker Desktop** (for running Kestra on your local machine): https://docs.docker.com/desktop/
     - Install **Kestra in a single Docker container**: https://kestra.io/docs/installation/docker 
 
-## Detailed Project Specifications :microscope:
+## :microscope: Detailed Project Specifications
 
 To create a data pipeline, the following steps were taken:
 

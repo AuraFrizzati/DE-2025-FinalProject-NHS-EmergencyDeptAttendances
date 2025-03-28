@@ -82,7 +82,7 @@ You can start by **cloning this repository on your local machine** (use the term
 git clone https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances.git
 ```
 
-To create a data pipeline, the following steps were taken:
+To replicate the project data pipeline, you can follow these more detailed steps:
 
 ### **Step 1: Cloud setup**
 A project space was setup on **Google Cloud Platform** (**GCP**) using **Terraform Infrastructure as Code** (**IaC**) to ensure scalability, reproducibility, and efficient resource management.

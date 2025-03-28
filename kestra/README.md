@@ -1,10 +1,16 @@
 # **Kestra setup and scripts**
 
-- Run **Kestra container** from a specific directory on your local machine (`-v`) in detached mode (`-d`):
+- Run **Kestra**: 
+    - in a **Docker container** (`docker run`) 
+    - that can interact with a **specific directory** on your local machine (selected after `-v`, which mounts the Docker socket from the host machine into the container) 
+    - in **detached mode** (`-d`, so you can keep on using the same terminal from where you launched it) 
+    - on **port 8080** (`-p 8080:8080`)
+    - `--pull=always` ensures the **latest image of Kestra** is pulled from Docker hub
+    - `--rm` automatically removes the conatiner once stopped 
 
-```python
-docker run --pull=always --rm -d -p 8080:8080 --user=root -v /var/run/docker.sock:/var/run/docker.sock -v /Users/aurafrizzati/Desktop/DE-2025-FinalProject/terraform:/tmp kestra/kestra:latest server local
-```
+    ```python
+    docker run --pull=always --rm -d -p 8080:8080 --user=root -v /var/run/docker.sock:/var/run/docker.sock -v /Users/aurafrizzati/Desktop/DE-2025-FinalProject/terraform:/tmp kestra/kestra:latest server local
+    ```
 
 - Upload the relevant **Kestra yaml files** to the Kestra Docker container:
 

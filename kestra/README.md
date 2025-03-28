@@ -1,5 +1,7 @@
 # **Kestra setup and scripts**
 
+## **Kestra setup**
+
 - Run **Kestra**: 
     - in a **Docker container** (`docker run`), 
     - mounting the Docker socket for task execution and a local directory for file access (commands after `-v`, for **mounting "volumes"**),
@@ -18,6 +20,7 @@
     curl -X POST http://localhost:8080/api/v1/flows/import -F fileUpload=@01_gcp_kv.yaml
     curl -X POST http://localhost:8080/api/v1/flows/import -F fileUpload=@02_gcp_kestra_ingestion_scheduled.yaml
     ```
+## **Kestra scripts**
 
 - [`01_gcp_kv.yaml`](https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances/blob/main/kestra/01_gcp_kv.yaml): configures the **essential parameters** for interacting with **GCP**, including authentication credentials (`gcp_creds`), project ID (`gcp_project_id`), location (`gcp_location`), Google Cloud Storage (GCS) bucket name (`gcp_bucket_name`), and BigQuery dataset name (`gcp_dataset`).
 - [`02_gcp_kestra_ingestion_scheduled.yaml`](https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances/blob/main/kestra/02_gcp_kestra_ingestion_scheduled.yaml): The primary orchestration file responsible for **automating** the **monthly retrieval of NHS CSV files**. It runs a **Python** script within the same Docker container as Kestra, which **web scrapes** (`beautifulsoup`) the NHS website to locate the latest CSV file, downloads it, and uploads it to the GCS bucket.

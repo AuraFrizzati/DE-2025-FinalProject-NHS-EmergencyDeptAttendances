@@ -38,7 +38,6 @@ The **orchestrator pipeline** is run automatically on a **monthly schedule** via
 Previous months are downloaded using the **Backfill executions** feature of **Kestra Triggers**:
 
 <img src="img/kestra_backfill.png"  width="400" height="200">
-![alt text](image-1.png)
 
 ### **Step 2**
 

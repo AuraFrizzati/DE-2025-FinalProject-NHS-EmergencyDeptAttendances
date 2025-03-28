@@ -20,7 +20,7 @@ One obstacle to achieve this monitoring is that the manual process of retrieving
 
 The objective of this project is to design and **implement an automated data pipeline that retrieves the open-source data on A&E attendances and emergency admissions from the NHS Digital website** (from January 2020 onwards). The pipeline will ensure that the data is collected, processed, and stored efficiently, enabling timely and accurate analysis.
 
-## High-level Project Specifications :dart:
+## High-level Project Specifications :pushpin:
 
 1. **Cloud setup**: a project space was setup on **Google Cloud Platform** (**GCP**) using **Terraform Infrastructure as Code** (**IaC**) to ensure scalability, reproducibility, and efficient resource management.
 
@@ -30,7 +30,7 @@ The objective of this project is to design and **implement an automated data pip
 
 4. **Data Transformation**: BQ **[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the GCP-native alternative to dbt), ensuring data is clean, structured, and analysis-ready. 
 
-5. **Data Visualization**: The processed data was visualised in **Looker Studio**, providing high-level insights into A&E attendance and hospital emergency admissions.
+5. **Data Visualization**: The processed data was visualised in **Looker Studio**, providing high-level insights into A&E attendance and hospital emergency admissions (see dashboard at this link: https://lookerstudio.google.com/s/oGRrPtX-9xY)
 
 
 ## Repository Structure :deciduous_tree:

@@ -42,12 +42,12 @@ The main instructions to run this project are contained in this readme file. I a
 |   ├── README.md
 │   ├── 01_gcp_kv.yaml
 │   ├── 02_gcp_kestra_ingestion_scheduled.yaml
-│   ├── img
+│   └── img
 ├── terraform
 |   ├── README.md
 │   ├── main.tf
 │   ├── variables.tf
-│   ├── img
+│   └── img
 └── README.md
 ```
 

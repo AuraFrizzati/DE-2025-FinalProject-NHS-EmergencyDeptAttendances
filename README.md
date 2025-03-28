@@ -45,8 +45,8 @@ To create a DE pipeline, the following steps were taken:
     - The data was retrieved **from January 2020 to February 2025**.
     - **Orchestration with Kestra**: Kestra was chosen as the orchestrator, running on a local MacOS machine via **Docker**. A **scheduled trigger** (15th of each month) ensures automatic execution. See Kestra scripts here: [Kestra Documentation](kestra/README.md)
     - The main ingestion script (`02_gcp_kestra_ingestion_scheduled.yaml`) executes a **Python web scraper** that:
-        - Extracts the correct URL from the NHS website.
-        - Downloads the latest CSV file.
+        - Retrieves the correct URL for the last month of data available on the NHS website.
+        - Uses the URL to download the relevant CSV file.
         - Uploads the file to the **GCS bucket**.
 
  

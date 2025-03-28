@@ -33,22 +33,22 @@ We will create a pipeline and **retrieve monthly data from January 2020 to Febru
 
 ## Repository Structure
 
+The main instructions to run this project are contained in this readme file. I am also sharing the code I used to setup Terraform (inside `terraform/`) and Kestra (inside `kestra/`). I am also sharing the scripts I have developed for data trasformation in BQ usinf Dataform in a separate Github repository (https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project).
+
 ```plaintext
 .
-├── .gitignore
 ├── README.md
-├── data
-│   ├── raw_data
-│   ├── transformed_data
 ├── kestra
+|   ├── README.md
+│   ├── 01_gcp_kv.yaml
 │   ├── 02_gcp_kestra_ingestion_scheduled.yaml
-│   ├── kestra_support.txt
+│   ├── img
 ├── terraform
+|   ├── README.md
 │   ├── main.tf
 │   ├── variables.tf
+│   ├── img
 └── python_dev
-    ├── process_data.py
-    ├── analyze_schema.py
 ```
 
 ## Detailed Project Specifications

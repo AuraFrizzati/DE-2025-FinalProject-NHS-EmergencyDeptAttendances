@@ -51,6 +51,21 @@ The main instructions to run this project are contained in this readme file. I a
 └── python_dev
 ```
 
+## Software/Platforms used
+- **Google Cloud Platform** (**GCP**): 
+    - **Get started** with GCP: https://www.youtube.com/watch?v=GKEk1FzAN1A
+    - Create a **GCP project**: https://developers.google.com/workspace/guides/create-project
+    - **Google Cloud Storage (GCS)** overview: https://cloud.google.com/storage?hl=en
+    - **Big Query (BQ)** intro: https://cloud.google.com/bigquery?hl=en
+    - **Dataform**: https://cloud.google.com/dataform?hl=en
+
+- **Terraform**: 
+    - Install **Terraform**: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+
+- **Kestra**: 
+    - Install **Docker Desktop** (for running Kestra on your local machine): https://docs.docker.com/desktop/
+    - Install **Kestra in a single Docker container**: https://kestra.io/docs/installation/docker 
+
 ## Detailed Project Specifications
 
 To create a DE pipeline, the following steps were taken:

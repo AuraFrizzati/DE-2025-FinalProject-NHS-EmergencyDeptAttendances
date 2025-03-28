@@ -2,7 +2,7 @@
 
 - Run **Kestra**: 
     - in a **Docker container** (`docker run`) 
-    - that can interact with a **specific directory** on your local machine (selected after `-v`, which mounts the Docker socket from the host machine into the container) 
+    - Mounts the Docker socket for task execution and a local directory for file access (commands after `-v`, for **mounting "volumes"**).
     - in **detached mode** (`-d`, so you can keep on using the same terminal from where you launched it) 
     - on **port 8080** (`-p 8080:8080`)
     - `--pull=always` ensures the **latest image of Kestra** is pulled from Docker hub

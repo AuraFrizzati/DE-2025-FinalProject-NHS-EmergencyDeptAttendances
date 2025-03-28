@@ -79,11 +79,11 @@ To create a DE pipeline, the following steps were taken:
     <img src="img/Dataform_workspace.png" width="200" height="100">
 
     The key steps include:  
-        - Uploading the raw extracts from GCS (`nhs_ae_gcs_upload_01_07_2020.sqlx`, `nhs_ae_gcs_upload_08_2020_2025.sqlx`)
-        - Standardising tables' schema: adding missing columns to align older extracts (pre-August 2020, `nhs_ae_batch_01_07_2020.sqlx`) with newer ones (`nhs_ae_gcs_upload_08_2020_2025.sqlx`).
-        - Consolidating data: Merging all extracts into a single "master" table (`nhs_ae_all.sqlx`). Before this step is carried out, the extract table are checked to ensure they do not have missing values in these key fields (sqlx code: `nonNull: ["Period", "Parent_Org", "Org_Name"]`), using [Dataform Assertions](https://cloud.google.com/dataform/docs/assertions).
-        - Deriving date fields: Extracting Month-Year from the "Period" string column (`nhs_ae_all.sqlx`).
-        - Creating aggregated metrics for the latest extracted month for visualization in dashboards (`nhs_ae_all_aggr_lastmonth.sqlx`).
+        - Uploading the raw extracts from GCS (`nhs_ae_gcs_upload_01_07_2020.sqlx`, `nhs_ae_gcs_upload_08_2020_2025.sqlx`)  
+        - Standardising tables' schema: adding missing columns to align older extracts (pre-August 2020, `nhs_ae_batch_01_07_2020.sqlx`) with newer ones (`nhs_ae_gcs_upload_08_2020_2025.sqlx`).  
+        - Consolidating data: Merging all extracts into a single "master" table (`nhs_ae_all.sqlx`). Before this step is carried out, the extract table are checked to ensure they do not have missing values in these key fields (sqlx code: `nonNull: ["Period", "Parent_Org", "Org_Name"]`), using [Dataform Assertions](https://cloud.google.com/dataform/docs/assertions).  
+        - Deriving date fields: Extracting Month-Year from the "Period" string column (`nhs_ae_all.sqlx`).  
+        - Creating aggregated metrics for the latest extracted month for visualization in dashboards (`nhs_ae_all_aggr_lastmonth.sqlx`).  
 
     <img src="img/Dataform_pipeline.png">
 

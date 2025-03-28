@@ -55,7 +55,7 @@ To create a DE pipeline, the following steps were taken:
     - **Clustering**: By key categorical columns used in aggregations (["`Parent_Org_cln`", "`Org_name`"])
     - Partitioning and clustering are specified in the dataform sqlx code used to create the master table:
 
-    <img src="img/BQ_clustering_partitioning.png" alt="alt text" width="600" height="100">
+    <img src="img/BQ_clustering_partitioning.png">
 
 
 4. **Data Transformation**: BigQuery **[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the GCP-native alternative to dbt), ensuring data is clean, structured, and analysis-ready. This is the link to the Github repository created in Dataform for this project: https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project. 

@@ -49,7 +49,6 @@ To create a DE pipeline, the following steps were taken:
         - Uses the URL to download the relevant CSV file.
         - Uploads the file to the **GCS bucket**.
 
-<br>
 3. **Data Warehouse**: **Google BQ** was used as data warehouse. Monthly extracts from the NHS website were imported from GCS bucket and appended as a **master table**. Query performance from the master table was optimized using:
     - **Partitioning**: By the `year_month` date column
     - **Clustering**: By key categorical columns used in aggregations (["`Parent_Org_cln`", "`Org_name`"])
@@ -57,6 +56,7 @@ To create a DE pipeline, the following steps were taken:
 
     <img src="img/BQ_clustering_partitioning.png">
 
+<br></br>
 
 4. **Data Transformation**: BigQuery **[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the GCP-native alternative to dbt), ensuring data is clean, structured, and analysis-ready. This is the link to the Github repository created in Dataform for this project: https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project. 
 

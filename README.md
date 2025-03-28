@@ -113,7 +113,13 @@ An **orchestrated pipeline** was created to **monthly ingest batch NHS A&E open 
 
 ### **Step 4: Data Transformation**
 
-**[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the **BQ-native alternative to dbt**), ensuring data is clean, structured, and analysis-ready. This is the link to the Github repository created in Dataform for this project: https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project (commit id for submission: `226eb7b`) 
+**[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the **BQ-native alternative to dbt**), ensuring data is clean, structured, and analysis-ready. This is the link to the Github repository created in Dataform for this project: https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project (commit id for submission: `226eb7b`).
+
+In order to use Dataform and move/transform data from GCS into BQ, you need to authorise the standard **Service Account** ``[your_service_account_code]@gcp-sa-dataform.iam.gserviceaccount.com` with the following **permissions**: `BigQuery Data Editor`, `BigQuery Data Viewer`, `BigQuery Job User`, `Dataform Service Agent`, `Storage Object Admin`.
+
+In order to get startarted with Dataform, you can follow this video tutorial: https://www.youtube.com/watch?v=285HnXL9_rk.
+
+Dataform enables git version control on GCP of SQL scripts. You can host the code in your Github account by linking Dataform to your repository (see these instructions: https://www.measurelab.co.uk/blog/dataform-github-google-cloud-setup/)
 
 To create a Dataform repository to connect to BigQuery:  
 

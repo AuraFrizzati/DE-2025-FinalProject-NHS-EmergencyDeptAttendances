@@ -4,7 +4,7 @@
 
     - Select **IAM & Admin** --> **Service Accounts**:
 
-    <img src="img/GCP_service_account.png" alt="alt text" width="400" height="400">
+    <img src="img/GCP_service_account.png" alt="alt text" width="300" height="400">
 
     - Select **Create Service Account**
     ![alt text](image-1.png)

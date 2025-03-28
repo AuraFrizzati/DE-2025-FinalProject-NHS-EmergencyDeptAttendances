@@ -48,7 +48,7 @@ The main instructions to run this project are contained in this readme file. I a
 │   ├── main.tf
 │   ├── variables.tf
 │   ├── img
-├── README.md
+└── README.md
 ```
 
 ## Software/Platforms used :computer:

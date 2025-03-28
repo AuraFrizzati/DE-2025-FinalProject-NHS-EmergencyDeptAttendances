@@ -20,7 +20,7 @@
 
     - Create a new key as json file (**service-account-key-file.json**) to connect to the Service Account for Terraform created above. Save this file in a safe place and do not share it via Github!
 
-        <img src="img/GCP_key_SA.png"  width="500" height="100">
+        <img src="img/GCP_key_SA.png"  width="400" height="100">
 
 - Access to Google Cloud was granted to Terraform by setting in the terminal a **GOOGLE_APPLICATION_CREDENTIALS** environment variable pointing to the path where the **service-account-key-file.json** was stored on the local machine:
 

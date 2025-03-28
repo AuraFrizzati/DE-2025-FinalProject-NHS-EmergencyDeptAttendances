@@ -64,26 +64,27 @@ To create a DE pipeline, the following steps were taken:
 
 4. **Data Transformation**: BigQuery **[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the GCP-native alternative to dbt), ensuring data is clean, structured, and analysis-ready. This is the link to the Github repository created in Dataform for this project: https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project. 
 
-    To create a Dataform repository to connect to BigQuery:
-    4.1 select **Pipelines(Dataform)** from the GCP menu:
+    To create a Dataform repository to connect to BigQuery:  
+
+    **4.1:** Select **Pipelines(Dataform)** from the GCP menu:
 
     <img src="img/image-5.png" alt="alt text" width="300" height="400">
 
-    4.2 Click on **Create repository** to create a Dataform repository (this is a **version-controlled git repository** that can be connected to and hosted in an online version control platform, such as Github)
+    **4.2:** Click on **Create repository** to create a Dataform repository (this is a **version-controlled git repository** that can be connected to and hosted in an online version control platform, such as Github)
 
     <img src="img/image-6.png" alt="alt text" width="400" height="100">
 
-    - Click on **Create a Development Workspace** to setup a Dataform Workspace (this is similar to a "**branch**" in Github):
+    **4.3:** Click on **Create a Development Workspace** to setup a Dataform Workspace (this is similar to a "**branch**" in Github):
 
     <img src="img/image-7.png" alt="alt text" width="200" height="100">
 
-The key transformation steps include:
-    - Removing the "Total" row from each extract.
-    - Standardizing schema: Adding missing columns to align older extracts (pre-August 2020) with newer ones.
-    - Consolidating data: Merging all extracts into a single "master" table.
-    - Deriving date fields: Extracting Month-Year from the "Period" string column.
-    - Appending new data: Integrating fresh extracts into the dataset.
-    - Creating aggregated metrics for visualization in dashboards.
+    The key transformation steps include:
+        - Removing the "Total" row from each extract.
+        - Standardizing schema: Adding missing columns to align older extracts (pre-August 2020) with newer ones.
+        - Consolidating data: Merging all extracts into a single "master" table.
+        - Deriving date fields: Extracting Month-Year from the "Period" string column.
+        - Appending new data: Integrating fresh extracts into the dataset.
+        - Creating aggregated metrics for visualization in dashboards.
 
     ![alt text](image-1.png)
 

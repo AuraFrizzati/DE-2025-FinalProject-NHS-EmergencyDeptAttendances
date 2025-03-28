@@ -79,7 +79,7 @@ To create a DE pipeline, the following steps were taken:
     <img src="img/Dataform_workspace.png" width="200" height="100">
 
     The key steps include:  
-        - **Uploading the raw extracts from GCS** (`nhs_ae_gcs_upload_01_07_2020.sqlx`, `nhs_ae_gcs_upload_08_2020_2025.sqlx`)  
+        - **Uploading the raw extracts from GCS** (`nhs_ae_gcs_upload_01_07_2020.sqlx`, `nhs_ae_gcs_upload_08_2020_2025.sqlx`).  
         - **Standardising tables' schema**: adding missing columns to align older extracts (pre-August 2020, `nhs_ae_batch_01_07_2020.sqlx`) with newer ones (`nhs_ae_gcs_upload_08_2020_2025.sqlx`).  
         - **Consolidating data**: Merging all extracts into a single "master" table (`nhs_ae_all.sqlx`). Before this step is carried out, the extract table are checked to ensure they do not have missing values in these key fields (sqlx code: `nonNull: ["Period", "Parent_Org", "Org_Name"]`), using [Dataform Assertions](https://cloud.google.com/dataform/docs/assertions).  
         - **Deriving date fields**: Extracting Month-Year from the "Period" string column (`nhs_ae_all.sqlx`).  
@@ -92,7 +92,9 @@ To create a DE pipeline, the following steps were taken:
 5. **Data Visualization**: The processed data is visualised in **Looker Studio**, providing high-level insights into A&E attendance and hospital emergency admissions.
     - The **dashboard** is available at this link: https://lookerstudio.google.com/s/oGRrPtX-9xY
     - **Top tile**: "Patients volumes for A&E Attendances and Emergency Admissions in NHS England". It displays monthly trends for: Total A&E Attendances, A&E Attendances over 4 hours and Emergency Hospital Admissions via A&E:
-    ![alt text](image-2.png)
+
+    <img src="img/LookerStudio_top_tile.png">
 
     - **Bottom tile**: "% of A&E Attendances over 4 Hours and % Emergency Hospital Admissions via A&E (last month)". It shows the latest monthly performance for NHS England Areas. The % are calculated with total A&E Attendances volumes as denominator. 
-    ![alt text](image-3.png)
+    
+    <img src="img/LookerStudio_bottom_tile.png">

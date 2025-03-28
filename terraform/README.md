@@ -22,11 +22,11 @@
 
         <img src="img/GCP_key_SA.png"  width="400" height="100">
 
-- Access to Google Cloud was granted to Terraform by setting in the terminal a **GOOGLE_APPLICATION_CREDENTIALS** environment variable pointing to the path where the **service-account-key-file.json** was stored on the local machine:
+    - Access to Google Cloud can be granted to Terraform by setting in the terminal a **GOOGLE_APPLICATION_CREDENTIALS** environmental variable pointing to the path where the **service-account-key-file.json** was stored on the local machine:
 
-```
-export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/service-account-key-file.json"
-```
+        ```
+        export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/service-account-key-file.json"
+        ```
 
 These are the terraform scripts used in this project:
 

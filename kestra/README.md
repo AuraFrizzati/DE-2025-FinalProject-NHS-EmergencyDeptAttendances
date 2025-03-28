@@ -33,7 +33,7 @@ This is the **Topology** of the **main data ingestion file** (`02_gcp_kestra_ing
 ### **Step 1**
 The **orchestrator pipeline** is run automatically on a **monthly schedule** via a **scheduler** triggerred on the 15th of each month. The **scheduler/trigger** sets as Kestra variables the current month and year to retrieve the relevant file on the NHS website (these variables will be used in the `extract_and_filter_csv` task).
 
-<img src="img/kestra_trigger_vars.png"  width="200" height="300">
+<img src="img/kestra_trigger_vars.png"  width="400" height="200">
 
 Previous months are downloaded using the **Backfill executions** feature of **Kestra Triggers**:
 

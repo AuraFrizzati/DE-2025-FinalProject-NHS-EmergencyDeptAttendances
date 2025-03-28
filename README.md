@@ -71,7 +71,7 @@ The main instructions to run this project are contained in this readme file. I a
 
 ## Detailed Project Specifications :microscope:
 
-To create a DE pipeline, the following steps were taken:
+To create a data pipeline, the following steps were taken:
 
 1. **Cloud setup**: a project space was setup on **Google Cloud Platform** (**GCP**) using **Terraform Infrastructure as Code** (**IaC**) to ensure scalability, reproducibility, and efficient resource management.
     - The first step is to **create a new Project on GCP** by selecting **Create Project** from the console and giving it a name:

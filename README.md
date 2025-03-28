@@ -53,7 +53,7 @@ To create a DE pipeline, the following steps were taken:
 3. **Data Warehouse**: **Google BQ** was used as data warehouse. Monthly extracts from the NHS website were imported from GCS bucket and appended as a **master table**. Query performance from the master table was optimized using:
     - **Partitioning**: By the `year_month` date column
     - **Clustering**: By key categorical columns used in aggregations (["`Parent_Org_cln`", "`Org_name`"])
-    - Partitioning and clustering are specified in the dataform sqlx code used to create the master table:
+    - Partitioning and clustering are specified in the **dataform sqlx code** (`nhs_ae_all.sqlx`) used to create the master table:
 
     <img src="img/BQ_clustering_partitioning.png">
 

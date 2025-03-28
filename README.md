@@ -76,7 +76,7 @@ The main instructions to run this project are contained in this readme file. I a
 
 ## :microscope: Detailed Project Specifications
 
-You can start by **cloning this repository on your local machine **(use the terminal to navigate in your folder of choice where to download the repository):
+You can start by **cloning this repository on your local machine** (use the terminal to navigate in your folder of choice where to download the repository):
 
 ```
 git clone https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances.git

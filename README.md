@@ -68,15 +68,15 @@ To create a DE pipeline, the following steps were taken:
 
     **4.1:** Select **Pipelines(Dataform)** from the GCP menu:
 
-    <img src="img/image-5.png" alt="alt text" width="300" height="400">
+    <img src="img/Dataform_menu.png" alt="alt text" width="300" height="400">
 
     **4.2:** Click on **Create repository** to create a Dataform repository (this is a **version-controlled git repository** that can be connected to and hosted in an online version control platform, such as Github)
 
-    <img src="img/image-6.png" alt="alt text" width="400" height="100">
+    <img src="img/Dataform_repository.png" alt="alt text" width="400" height="100">
 
     **4.3:** Click on **Create a Development Workspace** to setup a Dataform Workspace (this is similar to a "**branch**" in Github):
 
-    <img src="img/image-7.png" alt="alt text" width="200" height="100">
+    <img src="img/Dataform_workspace.png" alt="alt text" width="200" height="100">
 
     The key transformation steps include:
         - Removing the "Total" row from each extract.

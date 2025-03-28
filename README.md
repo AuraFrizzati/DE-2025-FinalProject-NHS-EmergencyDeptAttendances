@@ -1,5 +1,7 @@
 # Automated Data Pipeline for data retrieval and visualisation of NHS Digital A&E Attendances and Emergency Admissions
 
+This project was created a submission to the online free course **[Data Engineering Zoomcamp 2025](https://github.com/DataTalksClub/data-engineering-zoomcamp/)**
+
 ## The Problem :hospital:
 
 Each month, **NHS Digital** publishes aggregated data on **Accident & Emergency (A&E) attendances** and **emergency hospital admissions**:  https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/
@@ -14,9 +16,11 @@ Monitoring A&E attendances and emergency admissions is crucial for several reaso
 
 One obstacle to achieve this monitoring is that the manual process of retrieving, processing, and analysing the data can be time-consuming and prone to errors.
 
+## Objective :dart:
+
 The objective of this project is to design and implement an automated data pipeline that retrieves the open-source data on A&E attendances and emergency admissions from the NHS Digital website. The pipeline will ensure that the data is collected, processed, and stored efficiently, enabling timely and accurate analysis.
 
-We will create a pipeline and **retrieve monthly data from January 2020 to February 2025**.
+We will **retrieve monthly data from January 2020 onwards**.
 
 ## High-level Project Specifications :dart:
 

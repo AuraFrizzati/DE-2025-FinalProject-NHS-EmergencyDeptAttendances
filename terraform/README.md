@@ -1,8 +1,10 @@
 # **Terraform setup and scripts**
 
-- A **Service Account** was created on Google Cloud Platform to enable Terraform to create a google Cloud Storage (GCS) Bucket and a BigQuery Dataset:
+- A **Service Account** was created on GCP to enable Terraform to create a **GCS Bucket** and a **BQ Dataset**:
+
     - Select **IAM & Admin** --> **Service Accounts**:
-    ![alt text](image.png)
+
+    <img src="img/GCP_service_accoount.png" alt="alt text" width="600" height="100">
 
     - Select **Create Service Account**
     ![alt text](image-1.png)

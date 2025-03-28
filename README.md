@@ -78,7 +78,7 @@ To create a DE pipeline, the following steps were taken:
 
     <img src="img/Dataform_workspace.png" alt="alt text" width="200" height="100">
 
-    The key transformation steps include:
+    The key transformation steps include:  
         - Removing the "Total" row from each extract.
         - Standardizing schema: Adding missing columns to align older extracts (pre-August 2020) with newer ones.
         - Consolidating data: Merging all extracts into a single "master" table.

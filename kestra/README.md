@@ -13,8 +13,9 @@
     ```python
     docker run --pull=always --rm -d -p 8080:8080 --user=root -v /var/run/docker.sock:/var/run/docker.sock -v /Users/my_project/terraform:/tmp kestra/kestra:latest server local
     ```
+- Once the Kestra Image has been retrieved and the Docker Container is running on the local machine, we can access it by opening a browser window and typing `http://localhost:8080/` in the search bar.
 
-- Upload the relevant **Kestra yaml files** to the Kestra Docker container (these commands are run in the terminal from the folder specified with the previous command, `/Users/my_project/terraform` in this example):
+- You can now upload the relevant **Kestra yaml files** to the Kestra Docker container (these commands are run in the terminal from the folder specified with the previous command, `/Users/my_project/terraform` in this example):
 
     ```python
     curl -X POST http://localhost:8080/api/v1/flows/import -F fileUpload=@01_gcp_kv.yaml

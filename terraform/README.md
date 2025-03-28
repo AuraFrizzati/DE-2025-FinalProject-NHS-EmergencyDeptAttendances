@@ -4,7 +4,7 @@
 
     - Select **IAM & Admin** --> **Service Accounts**:
 
-    <img src="terraform/img/GCP_service_accoount.png" alt="alt text" width="600" height="100">
+    <img src="img/GCP_service_account.png" alt="alt text" width="600" height="100">
 
     - Select **Create Service Account**
     ![alt text](image-1.png)

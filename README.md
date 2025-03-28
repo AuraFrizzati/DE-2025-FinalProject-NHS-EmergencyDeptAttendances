@@ -18,7 +18,7 @@ The objective of this project is to design and implement an automated data pipel
 
 We will create a pipeline and **retrieve monthly data from January 2020 to February 2025**.
 
-## High-level Project Specifications
+## High-level Project Specifications :dart:
 
 1. **Cloud setup**: a project space was setup on **Google Cloud Platform** (**GCP**) using **Terraform Infrastructure as Code** (**IaC**) to ensure scalability, reproducibility, and efficient resource management.
 
@@ -51,7 +51,8 @@ The main instructions to run this project are contained in this readme file. I a
 └── python_dev
 ```
 
-## Software/Platforms used
+## Software/Platforms used :computer:
+
 - **Google Cloud Platform** (**GCP**): 
     - **Get started** with GCP: https://www.youtube.com/watch?v=GKEk1FzAN1A
     - Create a **GCP project**: https://developers.google.com/workspace/guides/create-project
@@ -66,7 +67,7 @@ The main instructions to run this project are contained in this readme file. I a
     - Install **Docker Desktop** (for running Kestra on your local machine): https://docs.docker.com/desktop/
     - Install **Kestra in a single Docker container**: https://kestra.io/docs/installation/docker 
 
-## Detailed Project Specifications
+## Detailed Project Specifications :microscope:
 
 To create a DE pipeline, the following steps were taken:
 

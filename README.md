@@ -41,6 +41,8 @@ To create a DE pipeline, the following steps were taken:
     - Terraform was then used to create a **Google Storage Bucket (GCS)** and a **Google Bigquery Dataset**, to host the data lake and the data warehouse for the project, respectively
     - The **Terraform code** used is available here: [Terraform documentation](https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances/blob/main/terraform/README.md)
 
+<br></br>
+
 2. **Data Ingestion**: The pipeline ingests batch NHS A&E open data, which is published monthly on the official  [NHS England website](https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/). 
     - The data was retrieved **from January 2020 to February 2025**.
     - **Orchestration with Kestra**: Kestra was chosen as the orchestrator, running on a local MacOS machine via **Docker**. A **scheduled trigger** (15th of each month) ensures automatic execution. See Kestra scripts here: [Kestra Documentation](kestra/README.md)
@@ -62,20 +64,18 @@ To create a DE pipeline, the following steps were taken:
 
 4. **Data Transformation**: BigQuery **[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the GCP-native alternative to dbt), ensuring data is clean, structured, and analysis-ready. This is the link to the Github repository created in Dataform for this project: https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project. 
 
-To create a Dataform repository to connect to BigQuery:
-- select **Pipelines(Dataform)** from the GCP menu:
+    To create a Dataform repository to connect to BigQuery:
+    - select **Pipelines(Dataform)** from the GCP menu:
 
     <img src="img/image-5.png" alt="alt text" width="300" height="400">
 
-- Click on **Create repository** to create a Dataform repository (this is a **version-controlled git repository** that can be connected to and hosted in an online version control platform, such as Github)
+    - Click on **Create repository** to create a Dataform repository (this is a **version-controlled git repository** that can be connected to and hosted in an online version control platform, such as Github)
 
     <img src="img/image-6.png" alt="alt text" width="400" height="100">
 
-- Click on **Create a Development Workspace** to setup a Dataform Workspace (this is similar to a "**branch**" in Github):
+    - Click on **Create a Development Workspace** to setup a Dataform Workspace (this is similar to a "**branch**" in Github):
 
     <img src="img/image-7.png" alt="alt text" width="200" height="100">
-
-
 
 The key transformation steps include:
     - Removing the "Total" row from each extract.
@@ -86,6 +86,8 @@ The key transformation steps include:
     - Creating aggregated metrics for visualization in dashboards.
 
     ![alt text](image-1.png)
+
+<br></br>
 
 5. **Data Visualization**: The processed data is visualised in **Looker Studio**, providing high-level insights into A&E attendance and hospital emergency admissions.
     - The **dashboard** is available at this link: https://lookerstudio.google.com/s/oGRrPtX-9xY

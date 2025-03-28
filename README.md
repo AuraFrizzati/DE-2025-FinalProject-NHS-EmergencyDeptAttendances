@@ -30,6 +30,27 @@ We will create a pipeline and **retrieve monthly data from January 2020 to Febru
 
 5. **Data Visualization**: The processed data was visualised in **Looker Studio**, providing high-level insights into A&E attendance and hospital emergency admissions.
 
+
+## Repository Structure
+
+```plaintext
+.
+├── .gitignore
+├── README.md
+├── data
+│   ├── raw_data
+│   ├── transformed_data
+├── kestra
+│   ├── 02_gcp_kestra_ingestion_scheduled.yaml
+│   ├── kestra_support.txt
+├── terraform
+│   ├── main.tf
+│   ├── variables.tf
+└── python_dev
+    ├── process_data.py
+    ├── analyze_schema.py
+```
+
 ## Detailed Project Specifications
 
 To create a DE pipeline, the following steps were taken:

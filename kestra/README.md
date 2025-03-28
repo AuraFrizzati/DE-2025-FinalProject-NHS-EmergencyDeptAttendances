@@ -48,19 +48,19 @@ The task `extract_and_filter_csv` is then executed and runs a **python script** 
 
 ### **Step 3**
 
-The task `upload_to_gcs` is then run and uploads the data to the GCS  bucket
+The task `upload_to_gcs` is then run and uploads the data to the GCS  bucket:
 
 <img src="img/kestra_upload_to_gcs.png">
 
 ### **Step 4**
 
-The task `set_label` is carried out to assign the **month** and **year** of the retrieved csv file to the Kestra execution (this allows to monitor the pipeline for different executions and it is especially useful to check that the backfill executions have all been carried out)
+The task `set_label` is carried out to assign the **month** and **year** of the retrieved csv file to the Kestra execution (this allows to monitor the pipeline for different executions and it is especially useful to check that the backfill executions have all been carried out):
 
 <img src="img/kestra_set_label.png">
 
 
 ### **Step 5**
 
-The final task is `purge_files`, which automatically removes the CSVs retrieved by the orchestrator from the local machine where it is running
+The final task is `purge_files`, which automatically removes the CSVs retrieved by the orchestrator from the local machine after each run is completed:
 
 <img src="img/kestra_purge_files.png">

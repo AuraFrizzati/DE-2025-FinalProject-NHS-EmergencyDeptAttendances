@@ -85,7 +85,7 @@ To create a DE pipeline, the following steps were taken:
         - Deriving date fields: Extracting Month-Year from the "Period" string column (`nhs_ae_all.sqlx`).
         - Creating aggregated metrics for the latest extracted month for visualization in dashboards (`nhs_ae_all_aggr_lastmonth.sqlx`).
 
-    <img src="img/Dataform_pipeline.png" width="200" height="100">
+    <img src="img/Dataform_pipeline.png">
 
 <br></br>
 

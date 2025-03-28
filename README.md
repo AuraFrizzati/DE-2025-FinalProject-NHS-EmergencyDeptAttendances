@@ -76,7 +76,7 @@ To create a DE pipeline, the following steps were taken:
 
     **4.3:** Click on **Create a Development Workspace** to setup a Dataform Workspace (this is similar to a "**branch**" in Github):
 
-    <img src="img/Dataform_workspace.png" alt="alt text" width="200" height="100">
+    <img src="img/Dataform_workspace.png" width="200" height="100">
 
     The key steps include:  
         - Uploading the raw extracts from GCS (`nhs_ae_gcs_upload_01_07_2020.sqlx`, `nhs_ae_gcs_upload_08_2020_2025.sqlx`)
@@ -85,7 +85,7 @@ To create a DE pipeline, the following steps were taken:
         - Deriving date fields: Extracting Month-Year from the "Period" string column (`nhs_ae_all.sqlx`).
         - Creating aggregated metrics for the latest extracted month for visualization in dashboards (`nhs_ae_all_aggr_lastmonth.sqlx`).
 
-        ![alt text](image-1.png)
+    <img src="img/Dataform_pipeline.png" width="200" height="100">
 
 <br></br>
 

@@ -1,5 +1,7 @@
 # **Terraform setup and scripts**
 
+## **Terraform setup**
+
 - A **Service Account** was created on GCP to enable Terraform to create a **GCS Bucket** and a **BQ Dataset**:
 
     - Select **IAM & Admin** --> **Service Accounts**:
@@ -28,13 +30,17 @@
         export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/service-account-key-file.json"
         ```
 
+<br></br>
+
+## **Terraform scripts**
+
 These are the terraform scripts used in this project:
 
 - [`main.tf`](https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances/blob/main/terraform/main.tf): terraform script to specify **Google** as **infrastructure provider** and the **resources** to create (`google_storage_bucket` and `google_bigquery_dataset`)
 
 - [`variables.tf`](https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances/blob/main/terraform/variables.tf): **Terraform variables** specified in `main.tf`
 
-These commands were then run from the terraform folder that contains the terraform scripts to create the infrastructure:
+These commands were run using the **command line** from the **terraform folder** that contains the terraform scripts:
 
 ```terraform
 # initialise Terraform State file (.tfstate):

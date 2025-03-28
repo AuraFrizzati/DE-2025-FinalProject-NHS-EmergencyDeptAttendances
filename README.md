@@ -70,7 +70,7 @@ The main instructions to run this project are contained in this readme file. I a
     - Install **Docker Desktop** (for running Kestra on your local machine): https://docs.docker.com/desktop/
     - Install **Kestra in a single Docker container**: https://kestra.io/docs/installation/docker 
 
-## :computer: Project Architecture
+## :house: Project Architecture
 
 <img src="img/DE_pipeline.png">
 

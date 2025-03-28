@@ -4,11 +4,15 @@
 
     - Select **IAM & Admin** --> **Service Accounts**:
 
-    <img src="img/GCP_menu_SA.png" width="400" height="300">
+        <img src="img/GCP_menu_SA.png" width="400" height="300">
+
+    <br></br>
 
     - Select **Create Service Account**
 
-    <img src="img/GCP_create_SA.png"  width="500" height="100">
+        <img src="img/GCP_create_SA.png"  width="500" height="100">
+
+    <br></br>
 
     - The Service account requires these **roles enabled**: `Bigquery Admin` (to create a BigQuery dataset), `Storage Admin` (to create a GCS bucket)
 

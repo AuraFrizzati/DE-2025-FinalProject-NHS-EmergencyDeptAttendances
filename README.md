@@ -76,24 +76,26 @@ To create a data pipeline, the following steps were taken:
 ### **Step 1: Cloud setup**
 A project space was setup on **Google Cloud Platform** (**GCP**) using **Terraform Infrastructure as Code** (**IaC**) to ensure scalability, reproducibility, and efficient resource management.
 
-- The first step is to **create a new Project on GCP** by selecting **Create Project** from the console and giving it a name:
+- The first step is to **create a new Project on GCP** by selecting **`Create Project`** from the console and **choosing a project name**:
 
 <img src="img/image-4.png" alt="alt text" width="600" height="100">
 
-- Terraform was then used to create a **Google Storage Bucket (GCS)** and a **Google Bigquery Dataset**, to host the data lake and the data warehouse for the project, respectively
+- Terraform was then used to create a **Google Storage Bucket (GCS)** and a **BQ Dataset**, to host the **data lake** and the **data warehouse** for the project, respectively
 
-- The **Terraform code** used is available here: [Terraform documentation](https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances/blob/main/terraform/README.md)
+- The **Terraform code** used to enable these steps and further instructions are available here: [Terraform documentation](https://github.com/AuraFrizzati/DE-2025-FinalProject-NHS-EmergencyDeptAttendances/blob/main/terraform/README.md)
 
-<br></br>
+### **Step 2: Data Ingestion**
 
-2. **Data Ingestion**: The pipeline ingests batch NHS A&E open data, which is published monthly on the official  [NHS England website](https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/). 
-    - The data was retrieved **from January 2020 to February 2025**.
-    - **Orchestration with Kestra**: Kestra was chosen as the orchestrator, running on a local MacOS machine via **Docker**. A **scheduled trigger** (15th of each month) ensures automatic execution. See Kestra scripts here: [Kestra Documentation](kestra/README.md)
-    - The main ingestion script (`02_gcp_kestra_ingestion_scheduled.yaml`) executes a **Python web scraper** that:
-        - **Retrieves the correct URL** for the last month of data available on the NHS website
-        - Uses the URL to **download the relevant CSV file on the local machine**
-        - **Removes any aggregated 'Total' rows** if present
-        - **Uploads the file** to the **GCS bucket**.
+An **orchestrated pipeline** was created to **monthly ingest batch NHS A&E open data** from the [NHS England website](https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/).
+
+- The data was retrieved **from January 2020 onwards**.
+- The pipeline **orchestration** was carried out using with **Kestra**. Kestra was run on a local MacOS machine via a **Docker container**. A **scheduled trigger** (running on the 15th day of each month) was used to plan automatic execution. 
+
+- Kestra scripts and more details about the orchestrated ingesting pipeline are availabel here: [Kestra Documentation](kestra/README.md). In a nutshell, the main ingestion script (`02_gcp_kestra_ingestion_scheduled.yaml`) executes a **Python web scraper** that:
+    - **Retrieves the correct URL** for the last month of data available on the NHS website
+    - Uses the URL to **download the relevant CSV file on the local machine**
+    - **Removes any aggregated 'Total' rows** if present
+    - **Uploads the file** to the **GCS bucket**.
 
 <br></br>
 

@@ -37,7 +37,7 @@ The main instructions to run this project are contained in this readme file. I a
 
 ```plaintext
 .
-├── README.md
+├── img
 ├── kestra
 |   ├── README.md
 │   ├── 01_gcp_kv.yaml
@@ -48,7 +48,7 @@ The main instructions to run this project are contained in this readme file. I a
 │   ├── main.tf
 │   ├── variables.tf
 │   ├── img
-└── python_dev
+├── README.md
 ```
 
 ## Software/Platforms used :computer:

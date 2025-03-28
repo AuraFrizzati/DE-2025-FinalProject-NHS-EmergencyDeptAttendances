@@ -33,7 +33,7 @@ We will create a pipeline and **retrieve monthly data from January 2020 to Febru
 
 ## Repository Structure
 
-The main instructions to run this project are contained in this readme file. I am also sharing the code I used to setup Terraform (inside `terraform/`) and Kestra (inside `kestra/`). I am also sharing the scripts I have developed for data trasformation in BQ usinf Dataform in a separate Github repository (https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project).
+The main instructions to run this project are contained in this readme file. I am also sharing the code I used to setup Terraform (inside `terraform/`) and Kestra (inside `kestra/`). The scripts I developed for data trasformation in BQ usinf Dataform are avaiable in a separate Github repository (https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project).
 
 ```plaintext
 .

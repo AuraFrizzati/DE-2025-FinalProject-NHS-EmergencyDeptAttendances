@@ -41,7 +41,7 @@ Previous months are downloaded using the **Backfill executions** feature of **Ke
 
 ### **Step 2**
 
-The task `extract_and_filter_csv` is then executed and runs a **python script** in the same Docker container where Kestra is running. The python script contains a **webscraper** (using the library `beautifulsoup`) to **extract the url** for the NHS A&E csv for the current month and year. The csv is then retrieved and imported as a `pandas` dataframe and the aggregated "Total" row is removed if present.
+The task `extract_and_filter_csv` is then executed and runs a **python script** in the same Docker container where Kestra is running. The python script contains a **webscraper** (using the library `beautifulsoup`) to **extract the url** for the NHS A&E csv for the current month and year. The csv is then retrieved and imported as a `pandas` dataframe and the aggregated "Total" row is removed if present. The **python script** is specified in the `script` chunk. The `beforeCommands` chunk allows to install any necessary **python library**. I have also specified I extract the output file to be in csv format (using `outputFiles`).
 
 <img src="img/kestra_python.png">
 

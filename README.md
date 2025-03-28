@@ -65,11 +65,11 @@ To create a DE pipeline, the following steps were taken:
 4. **Data Transformation**: BigQuery **[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the GCP-native alternative to dbt), ensuring data is clean, structured, and analysis-ready. This is the link to the Github repository created in Dataform for this project: https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project. 
 
     To create a Dataform repository to connect to BigQuery:
-    - select **Pipelines(Dataform)** from the GCP menu:
+    4.1 select **Pipelines(Dataform)** from the GCP menu:
 
     <img src="img/image-5.png" alt="alt text" width="300" height="400">
 
-    - Click on **Create repository** to create a Dataform repository (this is a **version-controlled git repository** that can be connected to and hosted in an online version control platform, such as Github)
+    4.2 Click on **Create repository** to create a Dataform repository (this is a **version-controlled git repository** that can be connected to and hosted in an online version control platform, such as Github)
 
     <img src="img/image-6.png" alt="alt text" width="400" height="100">
 

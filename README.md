@@ -33,7 +33,7 @@ We will create a pipeline and **retrieve monthly data from January 2020 to Febru
 
 ## Repository Structure :deciduous_tree:
 
-The main instructions to run this project are contained in this readme file. I am also sharing the code I used to setup Terraform (inside `terraform/`) and Kestra (inside `kestra/`). The scripts I developed for data trasformation in BQ usinf Dataform are avaiable in a separate Github repository (https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project).
+The main instructions to run this project are contained in this readme file. I am also sharing the code I used to setup Terraform (inside `terraform/`) and Kestra (inside `kestra/`). The scripts I developed for data trasformation in BQ usinf Dataform are avaiable in a separate Github repository (https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project, commit id for submission: `226eb7b`).
 
 ```plaintext
 .
@@ -100,7 +100,7 @@ To create a DE pipeline, the following steps were taken:
 
 <br></br>
 
-4. **Data Transformation**: BigQuery **[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the GCP-native alternative to dbt), ensuring data is clean, structured, and analysis-ready. This is the link to the Github repository created in Dataform for this project: https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project. 
+4. **Data Transformation**: BigQuery **[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the GCP-native alternative to dbt), ensuring data is clean, structured, and analysis-ready. This is the link to the Github repository created in Dataform for this project: https://github.com/AuraFrizzati/DE-2025-dataform/tree/dataform-final-project (commit id for submission: `226eb7b`s) 
 
     To create a Dataform repository to connect to BigQuery:  
 

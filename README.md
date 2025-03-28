@@ -18,7 +18,19 @@ The objective of this project is to design and implement an automated data pipel
 
 We will create a pipeline and **retrieve monthly data from January 2020 to February 2025**.
 
-## High Level Project Specifications
+## High-level Project Specifications
+
+1. **Cloud setup**: a project space was setup on **Google Cloud Platform** (**GCP**) using **Terraform Infrastructure as Code** (**IaC**) to ensure scalability, reproducibility, and efficient resource management.
+
+2. **Data Ingestion**: The pipeline ingests batch NHS A&E open data, which is published monthly on the official  [NHS England website](https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/). 
+
+3. **Data Warehouse**: **Google BigQuery** was used as data warehouse. Monthly extracts from the NHS website were imported from GCS bucket and appended as a **master table**. Query perfomance was optimisied using table **partitioning** and **clustering**.
+
+4. **Data Transformation**: BigQuery **[Dataform](https://cloud.google.com/dataform?hl=en)** was selected for data transformation (as the GCP-native alternative to dbt), ensuring data is clean, structured, and analysis-ready. 
+
+5. **Data Visualization**: The processed data is visualised in **Looker Studio**, providing high-level insights into A&E attendance and hospital emergency admissions.
+
+## Detailed Project Specifications
 
 To create a DE pipeline, the following steps were taken:
 
@@ -73,7 +85,7 @@ The key transformation steps include:
 
     ![alt text](image-1.png)
 
-4. **Data Visualization**: The processed data is visualised in **Looker Studio**, providing high-level insights into A&E attendance and hospital emergency admissions.
+5. **Data Visualization**: The processed data is visualised in **Looker Studio**, providing high-level insights into A&E attendance and hospital emergency admissions.
     - The **dashboard** is available at this link: https://lookerstudio.google.com/s/oGRrPtX-9xY
     - **Top tile**: "Patients volumes for A&E Attendances and Emergency Admissions in NHS England". It displays monthly trends for: Total A&E Attendances, A&E Attendances over 4 hours and Emergency Hospital Admissions via A&E:
     ![alt text](image-2.png)
